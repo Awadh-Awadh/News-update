@@ -1,6 +1,6 @@
 # import urllib.request,json
 import requests as rq
-from .models import Source
+from .models import Source,Articles
 
 api_key = None
 base_url = None
@@ -56,3 +56,25 @@ def get_sources():
 #         source_results.append(source_object)
 
 #         return source_results
+def get_articles(id):
+    '''
+    A function that returns a list of articles
+    Arg:
+        source id 
+    '''
+    with rq.get(article_url.format(id, api_key)) as data:
+        data = data.json()
+        articles_list = data.get('articles')
+        article_results = []
+        for article in articles_list:
+            publishedAt = article.get('publishedAt')
+            urlToImage=article.get('urlToImage')
+            title= article.get('title')
+            content=article.get('content')
+            author = article.get('author')
+            article_object = Articles(publishedAt,urlToImage,title,content,author)
+            article_results.append(article_object)
+
+            return article_results
+
+
