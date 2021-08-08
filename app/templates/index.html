@@ -7,8 +7,11 @@
   <title>Document</title>
 </head>
 <body>
-  {% for source in message %}
- <a href=""><h1>{{source.id}}</h1></a> 
+  <hr>
+  <h1>General</h1>
+  <hr>
+ {% for source in message %}
+ <a href=""><h1>{{source.name}}</h1></a> 
   {% endfor %}
 </body>
 </html>
