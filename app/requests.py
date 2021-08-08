@@ -11,8 +11,8 @@ def configure_request(app):
     base_url = app.config['NEWS_API_BASE_URL']
     article_url = app.config['NEWS_ARTICLE_URL']
 
-def get_sources():
-    with rq.get(base_url.format(api_key)) as data:
+def get_sources(category):
+    with rq.get(base_url.format(category,api_key)) as data:
         data = data.json()
         source_list = data.get('sources')
         return source_list
