@@ -6,7 +6,9 @@ from ..requests import get_sources
 
 @main.route('/')
 def index():
-    general = get_sources('business')
+    general = get_sources()
+    
+
     
 
     return render_template('index.html', message = general)

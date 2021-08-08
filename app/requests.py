@@ -1,4 +1,5 @@
-import urllib.request,json
+# import urllib.request,json
+import requests as rq
 from .models import Source
 
 api_key = None
@@ -12,32 +13,46 @@ def configure_request(app):
     article_url = app.config['NEWS_ARTICLE_URL']
 
 def get_sources():
-    with urllib.request.urlopen(base_url) as url:
-        get_url_data = url.read()
-        get_source_response = json.loads(get_url_data)
-
-        source_results = None
-        if get_source_response['sources']:
-            source_list = get_source_response['sources']
-            source_results = process_result(source_list)
-
-        return source_results
-
-def process_result(source_list):
-    '''Function  that processes the source result and transform them to a list of Objects
-
-    Args:
-        source_list: A list of dictionaries that contain movie details
-
-    Returns :
-        source_results: A list of movie objects
     '''
-    source_results = []
-
-    for item in source_list:
-        id = item.get('id')
-        name = item.get('name')
-        source_object = Source(id, name)
-        source_results.append(source_object)
-
+    A function that requests for data and processes it
+    '''
+    with rq.get(base_url.format(api_key)) as data:
+        data = data.json()
+        source_list = data.get('sources')
+        source_results = []
+        for source in source_list:
+            id = source.get('id')
+            name = source.get('name')
+            source_object = Source(id, name)
+            source_results.append(source_object)
         return source_results
+
+#     with urllib.request.urlopen(base_url.format(api_key)) as url:
+#         get_url_data = url.read()
+#         get_source_response = json.loads(get_url_data)
+
+#         source_results = None
+#         if get_source_response['sources']:
+#             source_list = get_source_response['sources']
+#             source_results = process_result(source_list)
+
+#         return source_results
+
+# def process_result(source_list):
+#     '''Function  that processes the source result and transform them to a list of Objects
+
+#     Args:
+#         source_list: A list of dictionaries that contain movie details
+
+#     Returns :
+#         source_results: A list of movie objects
+#     '''
+#     source_results = []
+
+#     for item in source_list:
+#         id = item.get('id')
+#         name = item.get('name')
+#         source_object = Source(id, name)
+#         source_results.append(source_object)
+
+#         return source_results
