@@ -142,3 +142,10 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+
+virtual/
+*.pyc
+*pycache*/
+instance/
+start.sh
+venv/
