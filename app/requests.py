@@ -56,25 +56,25 @@ def get_sources():
 #         source_results.append(source_object)
 
 #         return source_results
-def get_articles(id):
+def get_articles(source):
     '''
     A function that returns a list of articles
     Arg:
         source id 
     '''
-    with rq.get(article_url.format(id, api_key)) as data:
+    with rq.get(article_url.format(source,api_key)) as data:
         data = data.json()
         articles_list = data.get('articles')
         article_results = []
-        for article in articles_list:
-            publishedAt = article.get('publishedAt')
-            urlToImage=article.get('urlToImage')
-            title= article.get('title')
-            content=article.get('content')
-            author = article.get('author')
+        for artic in articles_list:
+            publishedAt = artic.get('publishedAt')
+            urlToImage=artic.get('urlToImage')
+            title = artic.get('title')
+            content = artic.get('content')
+            author = artic.get('author')
             article_object = Articles(publishedAt,urlToImage,title,content,author)
             article_results.append(article_object)
-
-            return article_results
+      
+        return article_results
 
 

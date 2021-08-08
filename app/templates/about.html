@@ -7,12 +7,11 @@
   <title>Document</title>
 </head>
 <body>
-  <hr>
-  <h1>General</h1>
-  <hr>
- {% for source in message %}
- <!-- <a href="/about/{{source.id}}"><h1>{{source.name}}</h1></a>  -->
- <a href="/about/{{source.id}}"><h1>{{source.name}}</h1></a>
+  
+  {% for article in articles%}
+  <img src="{{article.urlToImage}}" alt="">
+  <br>
   {% endfor %}
+
 </body>
 </html>
