@@ -2,7 +2,7 @@
 
 {% block css %}
 {{super()}}
-<link rel="stylesheet" href="{{url_for('static',filename = 'css/source.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/trial7.css')}}">
 {% endblock %}
 {% block head %}
 <title>Sources</title>
@@ -19,16 +19,15 @@
     <hr>
   
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 source">
         {% for source in message %}
-        <div class = "my-card">
-          <div class="card-container">
-            <a href="/about/{{source.id}}">
+        <div class = "my-card-container">
+          <div class="my-card">
+            
               <h2>
-                {{source.name}}
-    
+               |Source: {{source.name}}    
               </h2>
-            </a>
+              <a href="/about/{{source.id}}"><button class="btn btn-outline-light">Read Article..</button></a>
             {% endfor %}
           </div>
           
@@ -38,6 +37,7 @@
   
     </div>
   </div>
+</section>
   {% endblock %}
-  </section>
+  
     
