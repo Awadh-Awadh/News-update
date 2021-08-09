@@ -72,7 +72,8 @@ def get_articles(source):
             title = artic.get('title')
             content = artic.get('content')
             author = artic.get('author')
-            article_object = Articles(publishedAt,urlToImage,title,content,author)
+            url = artic.get('url')
+            article_object = Articles(publishedAt,urlToImage,title,content,author,url)
             article_results.append(article_object)
       
         return article_results

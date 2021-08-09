@@ -4,9 +4,10 @@ class Source:
       self.name = name
 
 class Articles:
-    def __init__(self, publishedAt, urlToImage,title,content,author):
+    def __init__(self, publishedAt, urlToImage,title,content,author,url):
       self.publishedAt = publishedAt
       self.urlToImage= urlToImage
       self.title = title
       self.content =content
       self.author = author
+      self.url = url
