@@ -147,4 +147,3 @@ venv/
 *pycache*/
 instance/
 start.sh
-./pycache
