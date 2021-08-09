@@ -1,4 +1,9 @@
 {%  extends 'base.html'%}
+
+{% block css %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/source.css')}}">
+{% endblock %}
 {% block head %}
 <title>Sources</title>
 {% endblock %}
@@ -6,21 +11,38 @@
 
 {% block content %}
 <div class="container">
+  <!-- <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <h1>AS <span class = "news">News</span>  </h1>
+     </a>
+    </div>
+  </nav> -->
   <hr>
-  <h1 class = "text-center">
+  <h1 class="text-center">
     NEWS SOURCES
   </h1>
   <hr>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      {% for source in message %}
+      <div class = "my-card">
+        <div class="card-container">
+          <a href="/about/{{source.id}}">
+            <h2>
+              {{source.name}}
+  
+            </h2>
+          </a>
+          {% endfor %}
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
 </div>
- {% for source in message %}
- <!-- <a href="/about/{{source.id}}"><h1>{{source.name}}</h1></a>  -->
- <!-- <a href="/about/{{source.id}}">
-  <h1 class = "text-center">
-    {{source.name}}
-
-  </h1>
-</a> -->
-  {% endfor %}
-
 {% endblock %}
-
