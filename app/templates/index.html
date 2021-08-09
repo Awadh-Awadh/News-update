@@ -11,38 +11,58 @@
 
 {% block content %}
 <div class="container">
-  <!-- <nav class="navbar navbar-light bg-light">
+  
+  <hr>
+  <nav class="navbar navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="/">
         <h1>AS <span class = "news">News</span>  </h1>
      </a>
     </div>
-  </nav> -->
-  <hr>
-  <h1 class="text-center">
-    NEWS SOURCES
-  </h1>
-  <hr>
-
-
-  <div class="row">
-    <div class="col-md-6">
-      {% for source in message %}
-      <div class = "my-card">
-        <div class="card-container">
-          <a href="/about/{{source.id}}">
-            <h2>
-              {{source.name}}
+  </nav>
   
-            </h2>
-          </a>
-          {% endfor %}
-        </div>
-        
-      </div>
-
+  <div class="row">
+    <div class="col-md-7">
+      <h3>Explore Today</h3>
+      <h4 class = "text-muted">
+      THROUGH THE EYES OF OUR JOURNALISTS AND PHOTOGRAPHERS 
+      </h4>
     </div>
-
+    <div class="col-md-5">
+      <div class="circle">
+        <h3>DISCOVER</h3>
+      </div>
+    </div>
+    <div class="">
+      <a href="#sources"><button class="btn btn-lg">Sources</button></a>
+    </div>
   </div>
-</div>
-{% endblock %}
+  <section id = "sources">
+    <h1 class="text-center">
+      NEWS SOURCES
+    </h1>
+    <hr>
+  
+    <div class="row">
+      <div class="col-md-6">
+        {% for source in message %}
+        <div class = "my-card">
+          <div class="card-container">
+            <a href="/about/{{source.id}}">
+              <h2>
+                {{source.name}}
+    
+              </h2>
+            </a>
+            {% endfor %}
+          </div>
+          
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
+  {% endblock %}
+  </section>
+  
