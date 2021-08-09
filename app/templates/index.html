@@ -5,10 +5,21 @@
 
 
 {% block content %}
-
+<div class="container">
+  <hr>
+  <h1 class = "text-center">
+    NEWS SOURCES
+  </h1>
+  <hr>
+</div>
  {% for source in message %}
  <!-- <a href="/about/{{source.id}}"><h1>{{source.name}}</h1></a>  -->
- <a href="/about/{{source.id}}"><h1>{{source.name}}</h1></a>
+ <!-- <a href="/about/{{source.id}}">
+  <h1 class = "text-center">
+    {{source.name}}
+
+  </h1>
+</a> -->
   {% endfor %}
 
 {% endblock %}

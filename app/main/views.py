@@ -3,8 +3,10 @@ from . import main
 from ..requests import get_sources, get_articles
 # from ..models import Source
 
-
 @main.route('/')
+def home():
+    return render_template('home.html')
+@main.route('/sources')
 def index():
     general = get_sources()
     return render_template('index.html', message = general)
