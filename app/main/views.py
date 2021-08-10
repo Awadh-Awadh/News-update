@@ -21,6 +21,6 @@ def index():
 
 @main.route('/about/<source_id>')
 def about(source_id):   
-    get_id = get_sources()
+    # get_id = get_sources()
     articles = get_articles(source_id)
     return render_template('about.html', articles = articles)
