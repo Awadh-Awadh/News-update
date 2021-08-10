@@ -22,7 +22,7 @@ $ source virtual/bin/activate
 ```
 - Install all the necessary modules
 
-$ git clone [https://github.com/Awadh-Awadh/News-update.git](my repo)
+$ git clone [Repo](https://github.com/Awadh-Awadh/News-update.git)
 - Navigate into the cloned project.
 
 $ cd News-updade
@@ -30,7 +30,7 @@ $ cd News-updade
 - Create a start.sh file
 $ touch start.sh
 
-- On your start.sh file , add your API key from [https://newsapi.org](News API) and the command for executing manage.py (python2 manage.py server), which will start the server.
+- On your start.sh file , add your API key from [News API](https://newsapi.org) and the command for executing manage.py (python2 manage.py server), which will start the server.
 
 - In your start.sh file, also export NEWS_API_KEY='<YOUR_API_KEY>' to your local machine
 
@@ -39,6 +39,9 @@ $ chmod a+x start.sh
 
 - command to run your application
 $ ./start.sh
+
+## Live Link
+[Live Link]()
 
 ## Known Bugs 
 
