@@ -27,18 +27,18 @@ $ git clone [Repo](https://github.com/Awadh-Awadh/News-update.git)
 
 $ cd News-updade
 
-- Create a start.sh file
-$ touch start.sh
+Create a start.sh file
+- $ touch start.sh
 
-- On your start.sh file , add your API key from [News API](https://newsapi.org) and the command for executing manage.py (python2 manage.py server), which will start the server.
+On your start.sh file , add your API key from [News API](https://newsapi.org) and the command for executing manage.py (python2 manage.py server), which will start the server.
 
-- In your start.sh file, also export NEWS_API_KEY='<YOUR_API_KEY>' to your local machine
+In your start.sh file, also export NEWS_API_KEY='<YOUR_API_KEY>' to your local machine
 
-- Give the file execution permissions.
-$ chmod a+x start.sh
+Give the file execution permissions.
+- $ chmod a+x start.sh
 
-- command to run your application
-$ ./start.sh
+command to run your application
+- $ ./start.sh
 
 ## Live Link
 [Live Link]()
